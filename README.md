@@ -25,28 +25,81 @@ Este projeto tem como objetivo demonstrar a utilização do Azure Cognitive Serv
 
 5. **Resultados e Insights**
    - Insights sobre o sentimento de cada sentença (positivo, negativo ou neutro):
-     ```json
-     [
-       {
-         "text": "Eu adorei o atendimento no restaurante, foi incrível!",
-         "sentiment": "positive",
-         "confidenceScores": {
-           "positive": 0.99,
-           "neutral": 0.01,
-           "negative": 0.00
-         }
-       },
-       {
-         "text": "O produto chegou quebrado e o suporte foi péssimo.",
-         "sentiment": "negative",
-         "confidenceScores": {
-           "positive": 0.02,
-           "neutral": 0.05,
-           "negative": 0.93
-         }
-       }
-     ]
-     ```
+{
+    "documents": [
+        {
+            "id": "id__415",
+            "sentiment": "positive",
+            "confidenceScores": {
+                "positive": 1,
+                "neutral": 0,
+                "negative": 0
+            },
+            "sentences": [
+                {
+                    "sentiment": "positive",
+                    "confidenceScores": {
+                        "positive": 1,
+                        "neutral": 0,
+                        "negative": 0
+                    },
+                    "offset": 0,
+                    "length": 53,
+                    "text": "Eu adorei o atendimento no restaurante, foi incrível!",
+                    "targets": [
+                        {
+                            "sentiment": "positive",
+                            "confidenceScores": {
+                                "positive": 1,
+                                "negative": 0
+                            },
+                            "offset": 12,
+                            "length": 11,
+                            "text": "atendimento",
+                            "relations": [
+                                {
+                                    "relationType": "assessment",
+                                    "ref": "#/documents/0/sentences/0/assessments/0"
+                                },
+                                {
+                                    "relationType": "assessment",
+                                    "ref": "#/documents/0/sentences/0/assessments/1"
+                                }
+                            ]
+                        }
+                    ],
+                    "assessments": [
+                        {
+                            "sentiment": "positive",
+                            "confidenceScores": {
+                                "positive": 1,
+                                "negative": 0
+                            },
+                            "offset": 3,
+                            "length": 6,
+                            "text": "adorei",
+                            "isNegated": false
+                        },
+                        {
+                            "sentiment": "positive",
+                            "confidenceScores": {
+                                "positive": 1,
+                                "negative": 0
+                            },
+                            "offset": 44,
+                            "length": 8,
+                            "text": "incrível",
+                            "isNegated": false
+                        }
+                    ]
+                }
+            ],
+            "warnings": []
+        }
+    ],
+    "errors": [],
+    "modelVersion": "2024-03-01"
+}
 
 ## Prints do Processo
 
